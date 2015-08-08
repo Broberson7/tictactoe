@@ -1,6 +1,14 @@
 .gameBoard {
-border:  1px black;
-background-color:  blue;
+
+
+
 
 
 }
+td {
+	border: solid 3px white;
+	width: 100px;
+	height: 100px;
+	background-color:  blue;
+}
+
