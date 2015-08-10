@@ -10,9 +10,11 @@ for (i = 0; i < 9; i ++) {
 }
 
 // Establish the variables used by the game
+var player1 = "";
+var player2 = "";
 var playerUp = 1;
 var playerSymbol = "X";
-playerUp = Math.floor((Math.random() * 2) + 1); // Decide randomly who goes first
+var submitStatus = false; // No players yet!
 
 // Asign the correct symbol to playerSymbol
 if (playerUp) {
@@ -22,10 +24,12 @@ if (playerUp) {
     else{
         playerSymbol = "O";
     }
-console.log(playerUp);
-console.log(playerSymbol);
+console.log("PlayerUp= ",playerUp);
+console.log("PlayerSymbol= ",playerSymbol);
 
-
+function randonPlayer() {
+    playerUp = Math.floor((Math.random() * 2) + 1); // Decide randomly who goes first
+}
 
 
 function changeColorOnMouseOver() {
@@ -39,15 +43,22 @@ function changeColorOnMouseOut() {
 }
 
 function processOnClick() {
-    console.log(this.id);
+    console.log("This is the click id",this.id);
     this.style.color = "white";
     document.getElementById(this.id).innerHTML  = playerSymbol;
 }
 
-function getId(){
-    var e = document.getElementById(this);
-    return e;
+
+function subPlayers() {
+    console.log("Hit the submit function");
+    player1 = document.forms[0]["player1"].value;
+    player2 = document.forms[0]["player2"].value;
+    submitStatus = true;
+    randomPlayer();
+    console.log("Player1",player1);
+    console.log("player2",player2);
 }
+
 
 
 document.getElementById("prompt").innerHTML += "Player " + playerUp + " its your turn" + "<br>";
@@ -61,7 +72,15 @@ for (var i = 0; i < 9; i ++) {
     document.getElementById(i + 1).onclick = processOnClick;
 }
 
-
+if (submitStatus) {
+    if (playerUp === 1) {
+        playerSymbol = "X";
+        document.getElementById("prompt").innerHTML += "Player " + playerUp + " its your turn" + "<br>";
+    } else {
+        playerSymbol = "O";
+        document.getElementById("prompt").innerHTML += "Player " + playerUp + " its your turn" + "<br>";
+    }
+}
 
 
 

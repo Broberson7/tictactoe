@@ -8,33 +8,33 @@
     </head>
     <body>
         <h1>TicTacToe</h1
-            <form>
-                <label>Type Your Name Here an Click Submit to Join the Game</label><br>
-                <input id="players" type="text"  player= "player">
-                <button >Submit</button>
-            </form>
-            <div class="gameBoard">
-                <table>
-                    <tr>
-                        <td id="1" class="box"> </td>
-                        <td id="2" class="box"></td>
-                        <td id="3" class="box"></td>
-                    </t>
-                    <tr>
-                        <td id="4" class="box"></td>
-                        <td id="5" class="box"></td>
-                        <td id="6" class="box"></td>
-                      </tr>
-                      <tr>
-                        <td id="7" class="box"></td>
-                        <td id="8" class="box"></td>
-                        <td id="9" class="box"></td>
-                      </tr>
-                </table>
-            </div>
-            <div id="prompt"></div>
-
-            <script type="text/javascript" src=tictactoe.js></script>
+        <form name="playersForm" >
+            <p>Type Your Names Here an Click Submit to Join the Game</p>
+            Player 1  <input type="text" name="player1" /><br/>
+            Player 2  <input type="text" name="player2" />
+            <button onclick="subPlayers()"  />Submit</button>
+        </form>
+        <div class="gameBoard">
+            <table>
+                <tr>
+                    <td id="1" class="box"> </td>
+                    <td id="2" class="box"></td>
+                    <td id="3" class="box"></td>
+                </t>
+                <tr>
+                    <td id="4" class="box"></td>
+                    <td id="5" class="box"></td>
+                    <td id="6" class="box"></td>
+                  </tr>
+                  <tr>
+                    <td id="7" class="box"></td>
+                    <td id="8" class="box"></td>
+                    <td id="9" class="box"></td>
+                  </tr>
+            </table>
+        </div>
+        <div id="prompt"></div>
+        <script type="text/javascript" src=tictactoe.js></script>
     </body>
 </html>
 
